@@ -1,0 +1,44 @@
+import turtle 
+import time 
+import random
+
+x = 0
+t1 = turtle.Turtle()
+t2 = turtle.Turtle()
+t3 = turtle.Turtle()
+turtle.colormode(255)
+t1.shapesize(2)
+t1.pensize(20)
+t2.pensize(20)
+t2.shapesize(2)
+t3.shapesize(2)
+t3.pensize(20)
+t3.penup()
+t3.goto(80,30)
+t3.pendown()
+t3.circle(1)
+t3.penup()
+t3.goto(80,-30)
+t3.pendown()
+t3.circle(1)
+time.sleep(1)
+
+t1.penup()
+t1.goto(-90,30)
+t1.pendown()
+t2.penup()
+t2.goto(-90,-30)
+t2.pendown()
+while True:
+    x = random.randint(50,100)
+    y = random.randint(50,100)
+    t1.forward(x)
+    t2.forward(y)
+    t1_position = t1.position()
+    t2_position = t2.position()
+    if t1_position[0] >= 80 and t1_position[1] >= 30:
+        print('turtle1 won!')
+        break
+    if t2_position[0] >= 80 and t2_position[1] <= -30:
+        print('turtle2 won!')
+        break
